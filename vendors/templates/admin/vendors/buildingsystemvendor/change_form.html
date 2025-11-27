@@ -1,0 +1,13 @@
+{% extends "admin/change_form.html" %}
+
+{% block submit_buttons_bottom %}
+{{ block.super }}
+{% if show_suggest_models and original %}
+<div class="submit-row">
+    <a href="{% url 'admin:vendors_buildingsystemvendor_suggest_models' original.pk %}" class="button"
+        style="background-color: #10b981; color: white; padding: 10px 15px; margin-left: 10px;">
+        🤖 AI Suggest Models
+    </a>
+</div>
+{% endif %}
+{% endblock %}
